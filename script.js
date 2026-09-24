@@ -286,7 +286,7 @@ async function submitReserva() {
   const horaSelect = document.getElementById('f-hora');
   const hora       = horaSelect.value;
   const pax        = document.getElementById('f-pax').value;
-  const API_URL = 'https://trattoriapalatino.up.railway.app';
+  const API_URL = 'https://trattoria-palatino-production.up.railway.app';
 
   let valido = true;
 
