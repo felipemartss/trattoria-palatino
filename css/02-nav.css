@@ -1,0 +1,223 @@
+/* ============================================================
+   NAV — Desktop original | Mobile sofisticado fullscreen
+   ============================================================ */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.2rem 3rem;
+  background-color: rgba(12, 10, 8, 0.95);
+  border-bottom: 1px solid #33281e;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-address {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  color: #e8d9b5;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.nav-address svg {
+  flex-shrink: 0;
+}
+
+.nav-address:hover {
+  color: #d4a84b;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  flex: 1;
+}
+
+.nav-links a {
+  color: #e8d9b5;
+  text-decoration: none;
+  font-size: 0.72rem;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #d4a84b;
+}
+
+.nav-cta {
+  background: transparent;
+  border: 1px solid #d4a84b;
+  color: #d4a84b;
+  padding: 0.5rem 1.4rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-weight: 700;
+}
+
+.nav-cta:hover {
+  background: #d4a84b;
+  color: #1a1208;
+}
+
+/* Hambúrguer — oculto no desktop */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 201;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.6px;
+  background: #d4a84b;
+  border-radius: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+/* Animação X */
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+.nav-overlay.active { display: block; }
+
+/* Link Reservar Mesa — só no mobile */
+.nav-links-reservar {
+  display: none;
+}
+
+/* ============================================================
+   NAV-UTILITY — Redes sociais + busca (estilo Red Bamboo)
+   ============================================================ */
+
+.nav-utility {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+/* Redes sociais */
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+}
+
+.nav-social a {
+  display: inline-flex;
+  color: #e8d9b5;
+  opacity: 0.85;
+  transition: color 0.2s, opacity 0.2s;
+}
+
+.nav-social a:hover {
+  color: #d4a84b;
+  opacity: 1;
+}
+
+/* No desktop, a versão de dentro do menu mobile fica escondida */
+.nav-social-mobile {
+  display: none;
+}
+
+/* Busca */
+.nav-search {
+  display: flex;
+  align-items: center;
+}
+
+.nav-search-toggle {
+  background: transparent;
+  border: none;
+  color: #e8d9b5;
+  cursor: pointer;
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.nav-search-toggle:hover {
+  color: #d4a84b;
+}
+
+.nav-search-input {
+  width: 0;
+  opacity: 0;
+  padding: 0;
+  margin-right: 0;
+  border: none;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  color: #f5edd8;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  transition: width 0.3s ease, opacity 0.3s ease, margin-right 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-search-input::placeholder {
+  color: rgba(245, 237, 216, 0.5);
+}
+
+.nav-search.active .nav-search-input {
+  width: 160px;
+  opacity: 1;
+  margin-right: 0.6rem;
+  padding: 0.25rem 0.1rem;
+  border-bottom-color: #d4a84b;
+}
+
+.nav-search-input.no-results {
+  border-bottom-color: #c0392b;
+  animation: nav-search-shake 0.4s ease;
+}
+
+@keyframes nav-search-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+/* Destaque temporário do prato encontrado pela busca */
+.menu-card.search-highlight {
+  outline: 2px solid #d4a84b;
+  outline-offset: -2px;
+  animation: nav-search-pulse 1.4s ease-in-out 2;
+}
+
+@keyframes nav-search-pulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(212, 168, 75, 0); }
+  50% { box-shadow: 0 0 18px rgba(212, 168, 75, 0.65); }
+}

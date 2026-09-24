@@ -1,0 +1,3 @@
+trattoria-backend/.env
+trattoria-backend/node_modules/
+trattoria-backend/reservas.db

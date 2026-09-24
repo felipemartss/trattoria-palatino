@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trattoria Palatino</title>
+  <link rel="stylesheet" href="css/01-base.css">
+  <link rel="stylesheet" href="css/02-nav.css">
+  <link rel="stylesheet" href="css/03-hero.css">
+  <link rel="stylesheet" href="css/04-about.css">
+  <link rel="stylesheet" href="css/05-menu.css">
+  <link rel="stylesheet" href="css/06-horario-contato.css">
+  <link rel="stylesheet" href="css/07-reserva.css">
+  <link rel="stylesheet" href="css/08-footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav>
+    <a class="nav-address"
+      href="https://www.google.com/maps/search/?api=1&query=P%C3%A1tio+Jacarand%C3%A1s+-+Av.+das+Palmeiras%2C+1101+-+Lj+04+-+Batuque+Novo%2C+Monte+Carmelo+-+MG%2C+38500-000"
+      target="_blank" rel="noopener" aria-label="Ver localização da Trattoria Palatino no mapa"
+      title="Pátio Jacarandás - Av. das Palmeiras, 1101 - Lj 04 - Batuque Novo, Monte Carmelo - MG">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+        <circle cx="12" cy="10" r="3"></circle>
+      </svg>
+      <span>Av. das Palmeiras, 1101</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#sobre">A Casa</a></li>
+      <li><a href="#menu">Cardápio</a></li>
+      <li><a href="#horario">Contato</a></li>
+      <li><a href="#reserva" class="nav-links-reservar">Reservar Mesa</a></li>
+
+      <!-- Redes sociais (dentro do menu no mobile) -->
+      <li class="nav-social nav-social-mobile">
+        <a href="https://www.instagram.com/trattoriapalatino/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path
+              d="M12 2.2c3.2 0 3.6 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.25.07 1.63.07 4.81s-.01 3.56-.07 4.81c-.15 3.23-1.66 4.77-4.92 4.92-1.25.06-1.62.07-4.85.07s-3.6-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.25-.07-1.63-.07-4.81s.01-3.56.07-4.81c.15-3.23 1.67-4.77 4.92-4.92C8.4 2.21 8.8 2.2 12 2.2zm0 1.8c-3.14 0-3.51.01-4.75.07-2.27.1-3.34 1.19-3.44 3.44C3.75 8.75 3.74 9.11 3.74 12s.01 3.25.07 4.49c.1 2.25 1.16 3.34 3.44 3.44 1.24.06 1.6.07 4.75.07s3.51-.01 4.75-.07c2.27-.1 3.34-1.18 3.44-3.44.06-1.24.07-1.6.07-4.49s-.01-3.25-.07-4.49c-.1-2.25-1.17-3.34-3.44-3.44C15.51 4.01 15.14 4 12 4zm0 3.4a4.6 4.6 0 1 1 0 9.2 4.6 4.6 0 0 1 0-9.2zm0 1.8a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zm5.7-2.02a1.08 1.08 0 1 1-2.16 0 1.08 1.08 0 0 1 2.16 0z" />
+          </svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path
+              d="M13.5 21v-7.6h2.55l.38-2.96h-2.93V8.55c0-.86.24-1.44 1.47-1.44h1.57V4.46c-.27-.04-1.2-.12-2.28-.12-2.26 0-3.8 1.38-3.8 3.9v2.18H8v2.96h2.46V21h3.04z" />
+          </svg>
+        </a>
+        <a href="https://api.whatsapp.com/send/?phone=5534999040296&text&type=phone_number&app_absent=0" target="_blank"
+          rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 448 512" width="18" height="18" fill="currentColor">
+            <path
+              d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+          </svg>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Redes sociais + busca (desktop) -->
+    <div class="nav-utility">
+      <ul class="nav-social nav-social-desktop">
+        <li>
+          <a href="https://www.instagram.com/trattoriapalatino/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path
+                d="M12 2.2c3.2 0 3.6 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.25.07 1.63.07 4.81s-.01 3.56-.07 4.81c-.15 3.23-1.66 4.77-4.92 4.92-1.25.06-1.62.07-4.85.07s-3.6-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.25-.07-1.63-.07-4.81s.01-3.56.07-4.81c.15-3.23 1.67-4.77 4.92-4.92C8.4 2.21 8.8 2.2 12 2.2zm0 1.8c-3.14 0-3.51.01-4.75.07-2.27.1-3.34 1.19-3.44 3.44C3.75 8.75 3.74 9.11 3.74 12s.01 3.25.07 4.49c.1 2.25 1.16 3.34 3.44 3.44 1.24.06 1.6.07 4.75.07s3.51-.01 4.75-.07c2.27-.1 3.34-1.18 3.44-3.44.06-1.24.07-1.6.07-4.49s-.01-3.25-.07-4.49c-.1-2.25-1.17-3.34-3.44-3.44C15.51 4.01 15.14 4 12 4zm0 3.4a4.6 4.6 0 1 1 0 9.2 4.6 4.6 0 0 1 0-9.2zm0 1.8a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zm5.7-2.02a1.08 1.08 0 1 1-2.16 0 1.08 1.08 0 0 1 2.16 0z" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path
+                d="M13.5 21v-7.6h2.55l.38-2.96h-2.93V8.55c0-.86.24-1.44 1.47-1.44h1.57V4.46c-.27-.04-1.2-.12-2.28-.12-2.26 0-3.8 1.38-3.8 3.9v2.18H8v2.96h2.46V21h3.04z" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://api.whatsapp.com/send/?phone=5534999040296&text&type=phone_number&app_absent=0"
+            target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 448 512" width="16" height="16" fill="currentColor">
+              <path
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Busca -->
+      <div class="nav-search" id="nav-search">
+        <input type="text" class="nav-search-input" id="nav-search-input" placeholder="Buscar prato..."
+          autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"
+          onkeydown="if(event.key==='Enter'){searchMenu(this.value);} if(event.key==='Escape'){toggleSearch(false);}">
+        <button class="nav-search-toggle" id="nav-search-toggle" aria-label="Abrir busca" onclick="toggleSearch()">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <button class="nav-cta" onclick="document.getElementById('reserva').scrollIntoView({behavior:'smooth'})">Reservar
+      Mesa</button>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menu" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+  <div class="nav-overlay" id="nav-overlay" onclick="closeMobileMenu()"></div>
+
+  <!-- HERO -->
+  <header id="inicio" class="hero">
+    <!-- 1. Única camada do fundo borrado (Substitui os antigos hero-pattern) -->
+    <div class="hero-bg-blur"></div>
+
+    <!-- 2. Camada do conteúdo centralizado (Logo + Enfeites + Botões) -->
+    <div class="hero-content">
+
+      <!-- Logo Transparente -->
+      <img src="assets/logo-palantino-transparente-org.webp" alt="Trattoria Palatino - Rustic Italian Restaurant"
+        class="hero-logo">
+
+      <!-- Ornamento -->
+      <div class="ornament">
+        <span class="ornament-line"></span>
+        <span class="ornament-dot"></span>
+        <span class="ornament-line"></span>
+      </div>
+
+      <!-- Botões -->
+      <div class="hero-actions">
+        <a href="#reserva" class="btn-gold">Fazer Reserva</a>
+        <a href="#menu" class="btn-outline">Ver Cardápio</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="section about-bg">
+    <div class="about-grid">
+      <!-- Imagem Real com a borda mantida por CSS -->
+      <div class="about-img">
+        <img src="assets/palatino.webp" alt="Interior da Trattoria Palatino" class="about-photo">
+      </div>
+      <div>
+        <span class="about-tag">Nossa História</span>
+        <h2 class="section-title">Uma trattoria de <em>alma italiana</em></h2>
+        <div class="divider"><span class="divider-line"></span><span class="divider-diamond"></span><span
+            class="divider-line"></span></div>
+        <p class="section-body" style="margin-bottom:1.2rem;">A Trattoria Palatino nasceu do amor pela culinária
+          italiana de verdade — aquela que se aprende nas cozinhas de família, com ingredientes frescos e
+          receitas transmitidas de geração em geração.</p>
+        <p class="section-body">Cada prato é preparado com cuidado artesanal, do pão feito na casa ao molho que
+          ferve lentamente. Aqui, a mesa é o centro do mundo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDÁPIO -->
+  <section id="menu" class="section menu-bg">
+    <div class="section-center">
+      <p class="eyebrow" style="color: var(--accent-gold);">Cardápio</p>
+      <h2 class="section-menu">Conheça nossos <em>destaques</em></h2>
+      <p class="section-body-menu">Ingredientes selecionados, receitas clássicas e toques contemporâneos.</p>
+
+      <!-- Abas do Cardápio -->
+      <div class="menu-tabs">
+        <button class="tab-btn active" data-pane="menu-almoco" onclick="openMenu(event, 'menu-almoco')">Almoço</button>
+        <button class="tab-btn" data-pane="menu-jantar" onclick="openMenu(event, 'menu-jantar')">Jantar</button>
+      </div>
+    </div>
+
+    <!-- MENU ALMOÇO -->
+    <div id="menu-almoco" class="menu-pane active">
+      <div class="menu-carousel-wrapper">
+        <!-- Setas de navegação (desktop) -->
+        <button class="carousel-arrow carousel-prev" onclick="carouselPrev('menu-almoco')"
+          aria-label="Anterior">&#8592;</button>
+        <div class="menu-grid-clip">
+          <div class="menu-grid" id="menu-almoco-grid">
+            <!-- Prato 1 -->
+            <div class="menu-card">
+              <div class="menu-card-img-container">
+                <span class="menu-card-badge">Executivo</span>
+                <img src="assets/almoço/fileparmegiana.webp" class="menu-dish-img" alt="Filé à Parmegiana">
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-card-title"><span class="menu-num">I.</span> Filé à Parmegiana</h3>
+                </div>
+                <p class="menu-card-desc">descrição do prato</p>
+              </div>
+            </div>
+            <!-- Prato 2 -->
+            <div class="menu-card">
+              <div class="menu-card-img-container">
+                <span class="menu-card-badge">Executivo</span>
+                <img src="assets/almoço/contrafile.webp" alt="Contra-filé acebolado" class="menu-dish-img">
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-card-title"><span class="menu-num">II.</span> Contra-filé acebolado</h3>
+                </div>
+                <p class="menu-card-desc">descrição do prato</p>
+              </div>
+            </div>
+            <!-- Prato 3 -->
+            <div class="menu-card">
+              <div class="menu-card-img-container">
+                <span class="menu-card-badge">Executivo</span>
+                <img src="assets/almoço/tilapia.webp" alt="Filé de Tilápia" class="menu-dish-img">
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-card-title"><span class="menu-num">III.</span> Filé de Tilápia</h3>
+                </div>
+                <p class="menu-card-desc">descrição do prato</p>
+              </div>
+            </div>
+            <!-- Prato 4 -->
+            <div class="menu-card">
+              <div class="menu-card-img-container">
+                <span class="menu-card-badge">Executivo</span>
+                <img src="assets/almoço/filedefrango.webp" alt="Frango Grelhado" class="menu-dish-img">
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-card-title"><span class="menu-num">IV.</span> Frango Grelhado</h3>
+                </div>
+                <p class="menu-card-desc">descrição do prato</p>
+              </div>
+            </div>
+            <!-- Prato 5 -->
+            <div class="menu-card">
+              <div class="menu-card-img-container">
+                <span class="menu-card-badge">Executivo</span>
+                <img src="assets/almoço/costelinhabarbecue.webp" alt="Costelinha Barbecue" class="menu-dish-img">
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-card-title"><span class="menu-num">V.</span> Costelinha ao Molho Barbecue</h3>
+                </div>
+                <p class="menu-card-desc">descrição do prato</p>
+              </div>
+            </div>
+            <!-- Prato 6 -->
+            <div class="menu-card">
+              <div class="menu-card-img-container">
+                <span class="menu-card-badge">Leve</span>
+                <img src="assets/almoço/omelete.jpeg" alt="Omelete" class="menu-dish-img">
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-card-title"><span class="menu-num">VI.</span> Omelete</h3>
+                </div>
+                <p class="menu-card-desc">descrição do prato</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-arrow carousel-next" onclick="carouselNext('menu-almoco')"
+          aria-label="Próximo">&#8594;</button>
+      </div>
+      <!-- Indicadores mobile -->
+      <div class="carousel-dots" id="menu-almoco-dots">
+        <span class="dot active" onclick="carouselGoTo('menu-almoco', 0)"></span>
+        <span class="dot" onclick="carouselGoTo('menu-almoco', 1)"></span>
+        <span class="dot" onclick="carouselGoTo('menu-almoco', 2)"></span>
+        <span class="dot" onclick="carouselGoTo('menu-almoco', 3)"></span>
+        <span class="dot" onclick="carouselGoTo('menu-almoco', 4)"></span>
+        <span class="dot" onclick="carouselGoTo('menu-almoco', 5)"></span>
+      </div>
+    </div>
+
+    <!-- MENU JANTAR -->
+    <div id="menu-jantar" class="menu-pane">
+      <div class="menu-carousel-wrapper">
+        <button class="carousel-arrow carousel-prev" onclick="carouselPrev('menu-jantar')"
+          aria-label="Anterior">&#8592;</button>
+        <div class="menu-grid-clip">
+          <div class="menu-grid" id="menu-jantar-grid">
+            <!-- Prato 1 -->
+            <div class="menu-card">
+              <div class="menu-card-img-container">
+                <span class="menu-card-badge"> Destaque da casa</span>
+                <img src="assets/jantar/pizzapalatinoo.png" alt="Pizzas" class="menu-dish-img">
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-card-title"><span class="menu-num">I.</span> Pizza Palatino</h3>
+                </div>
+                <p class="menu-card-desc">Molho de tomate, muçarela, bacon, calabresa, cebola
+                  caramelizada, queijo artesanal e orégano.</p>
+              </div>
+            </div>
+            <!-- Prato 2 -->
+            <div class="menu-card">
+              <div class="menu-card-img-container">
+                <span class="menu-card-badge"> Destaque da casa</span>
+                <img src="assets/jantar/paodealho.webp" alt="Pão de Alho" class="menu-dish-img">
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-card-title"><span class="menu-num">II.</span> Pão de alho</h3>
+                </div>
+                <p class="menu-card-desc">Muçarela, provolone, azeite de oliva extra virgem ao alho, orégano, salsinha e
+                  queijo artesanal.</p>
+              </div>
+            </div>
+            <!-- Prato 3 -->
+            <div class="menu-card">
+              <div class="menu-card-img-container">
+                <img src="assets/jantar/risotto.webp" alt="Risottos" class="menu-dish-img">
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-card-title"><span class="menu-num">III.</span> Risottos</h3>
+                </div>
+                <p class="menu-card-desc">Pollo, Bacon, 4 queijos, Alho poró, Filé mignon, Del Mare.</p>
+              </div>
+            </div>
+            <!-- Prato 4 -->
+            <div class="menu-card">
+              <div class="menu-card-img-container">
+                <img src="assets/jantar/massas.webp" alt="Massas" class="menu-dish-img">
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-card-title"><span class="menu-num">IV.</span> Massas</h3>
+                </div>
+                <p class="menu-card-desc">Spaghetti ao sugo, Spaghetti ao Ragu, Fusilli amatriciana, Fetuccine
+                  carbonara, Talharim 4 queijos, Talharim gamberi.</p>
+              </div>
+            </div>
+            <!-- Prato 5 -->
+            <div class="menu-card">
+              <div class="menu-card-img-container">
+                <img src="assets/jantar/imagemvinho.webp" alt="Vinhos" class="menu-dish-img">
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-card-title"><span class="menu-num">V.</span> Vinhos</h3>
+                </div>
+                <p class="menu-card-desc">Uma seleção especial de vinhos para tornar sua experiência ainda mais
+                  completa.</p>
+              </div>
+            </div>
+            <!-- Prato 6 -->
+            <div class="menu-card">
+              <div class="menu-card-img-container">
+                <img src="assets/jantar/choppimg.jpg" alt="Cerveja" class="menu-dish-img">
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-card-title"><span class="menu-num">VI.</span> Cervejas</h3>
+                </div>
+                <p class="menu-card-desc">Uma variedade de cervejas para acompanhar sua refeição e tornar sua
+                  experiência ainda mais completa.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-arrow carousel-next" onclick="carouselNext('menu-jantar')"
+          aria-label="Próximo">&#8594;</button>
+      </div>
+      <!-- Indicadores mobile -->
+      <div class="carousel-dots" id="menu-jantar-dots">
+        <span class="dot active" onclick="carouselGoTo('menu-jantar', 0)"></span>
+        <span class="dot" onclick="carouselGoTo('menu-jantar', 1)"></span>
+        <span class="dot" onclick="carouselGoTo('menu-jantar', 2)"></span>
+        <span class="dot" onclick="carouselGoTo('menu-jantar', 3)"></span>
+        <span class="dot" onclick="carouselGoTo('menu-jantar', 4)"></span>
+        <span class="dot" onclick="carouselGoTo('menu-jantar', 5)"></span>
+      </div>
+    </div>
+
+    <!-- BOTÃO DE CONSULTA AO CARDÁPIO COMPLETO -->
+    <div class="menu-full-view">
+      <a href="https://drive.google.com/file/d/1zxsFFbZaTt_kPK2j86JzGJoe3z2eUeOh/view" target="_blank"
+        class="btn-full-menu">
+        Consultar Cardápio Completo
+      </a>
+    </div>
+  </section>
+
+  <!-- HORÁRIO & CONTATO -->
+  <section id="horario" class="section horario-bg">
+    <div class="section-center">
+      <p class="eyebrow">Visite-nos</p>
+      <h2 class="section-title">Horários & <em>Contato</em></h2>
+    </div>
+    <div class="horario-grid">
+      <div class="h-block">
+        <h3>Horário de Funcionamento</h3>
+        <div class="h-row"><span>Segunda-feira</span><span>11h-14h</span></div>
+        <div class="h-row"><span>Terça a Quinta</span><span>11h–14h | 18h–23h</span></div>
+        <div class="h-row"><span>Sexta-feira</span><span>11h–14h | 18h–23:30h</span></div>
+        <div class="h-row"><span>Sábado</span><span>11h–14h | 18h-23:30h</span></div>
+        <div class="h-row"><span>Domingo</span><span>18h–23:30h</span></div>
+      </div>
+      <div class="h-block">
+        <h3>Fale Conosco</h3>
+        <div class="c-item"><span class="c-icon">📞</span><span>(34) 99904-0296</span></div>
+        <div class="c-item"><span class="c-icon">📍</span><span>Pátio Jacarandás - Av. das Palmeiras, 1101 - Lj
+            04 - Batuque Novo, Monte Carmelo - MG, 38500-000</span></div>
+        <div class="c-item"><span class="c-icon">📸</span><span>@trattoriapalatino</span></div>
+        <!-- Bloco do WhatsApp nas Opções de Contato -->
+        <div class="contact-whatsapp-wrapper">
+          <p class="whatsapp-text">Prefere receber em casa? Faça seu pedido agora mesmo.</p>
+
+          <!-- Substitua o número 5534999999999 pelo número real do restaurante (com DDD) -->
+          <!-- O trecho ?text= define a mensagem automática que o cliente enviará -->
+          <a href="https://api.whatsapp.com/send/?phone=5534999040296&text&type=phone_number&app_absent=0"
+            target="_blank" class="btn-whatsapp">
+
+            <!-- Ícone SVG do WhatsApp integrado -->
+            <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="18" height="18"
+              fill="currentColor">
+              <path
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+            </svg>
+            Fazer Pedido via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVA -->
+  <section id="reserva" class="section reserva-bg">
+    <div class="section-center">
+      <p class="eyebrow" style="color:#d4a84b;">Reservas</p>
+      <h2 class="section-title" style="color:#f5edd8;">Reserve sua <em style="color:#d4a84b;">mesa</em></h2>
+      <p class="section-body" style="color:#a89070;">Garanta seu lugar e chegue apenas para aproveitar.</p>
+    </div>
+    <div class="form-wrap">
+      <div class="form-row">
+        <div class="form-field" id="field-nome">
+          <label for="f-nome">Nome completo</label>
+          <input type="text" id="f-nome" placeholder="Seu nome">
+          <span class="field-error-msg" id="err-nome"></span>
+        </div>
+        <div class="form-field" id="field-tel">
+          <label for="f-tel">Telefone / WhatsApp</label>
+          <input type="tel" id="f-tel" placeholder="(xx) 9xxxx-xxxx" inputmode="numeric" maxlength="16"
+            oninput="maskPhoneInput(this)">
+          <span class="field-error-msg" id="err-tel"></span>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field" id="field-data">
+          <label for="f-data">Data</label>
+          <input type="date" id="f-data" onchange="updateHorarioOptions()">
+          <span class="field-error-msg" id="err-data"></span>
+        </div>
+        <div class="form-field" id="field-hora">
+          <label for="f-hora">Horário</label>
+          <select id="f-hora" disabled>
+            <option value="">Selecione a data primeiro</option>
+            <optgroup label="Almoço" id="grupo-almoco">
+              <option>12:00</option>
+              <option>12:30</option>
+              <option>13:00</option>
+              <option>13:30</option>
+              <option>14:00</option>
+            </optgroup>
+            <optgroup label="Jantar" id="grupo-jantar">
+              <option>19:00</option>
+              <option>19:30</option>
+              <option>20:00</option>
+              <option>20:30</option>
+              <option>21:00</option>
+              <option>21:30</option>
+              <option>22:00</option>
+            </optgroup>
+          </select>
+          <span class="field-error-msg" id="err-hora"></span>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field full" id="field-pax">
+          <label for="f-pax">Número de pessoas</label>
+          <select id="f-pax">
+            <option value="">Selecione</option>
+            <option value="1">1 pessoa</option>
+            <option value="2">2 pessoas</option>
+            <option value="3">3 pessoas</option>
+            <option value="4">4 pessoas</option>
+            <option value="5">5 pessoas</option>
+            <option value="6">6 pessoas</option>
+            <option value="7">7 pessoas</option>
+            <option value="8">8 pessoas</option>
+          </select>
+          <span class="field-error-msg" id="err-pax"></span>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field full">
+          <label for="f-obs">Observações (opcional)</label>
+          <textarea id="f-obs" rows="3" placeholder="Aniversário, alergias alimentares, pedido especial..."></textarea>
+        </div>
+      </div>
+      <button class="submit-btn" onclick="submitReserva()">Confirmar Reserva</button>
+      <div class="success-msg" id="success-msg">
+        ✦ Solicitação enviada! Entraremos em contato em breve para confirmar sua reserva.
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <ul class="footer-links">
+      <li><a href="#sobre">A Casa</a></li>
+      <li><a href="#menu">Cardápio</a></li>
+      <li><a href="#horario">Contato</a></li>
+      <li><a href="#reserva">Reservas</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Trattoria Palatino &middot; Felipe Martins</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

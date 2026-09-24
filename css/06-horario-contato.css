@@ -1,0 +1,105 @@
+/* HORÁRIO & CONTATO */
+
+.horario-bg {
+  background: #fff;
+}
+
+.horario-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+
+.h-block h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #1a1208;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid #e8dcc8;
+}
+
+.h-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.55rem 0;
+  font-size: 0.85rem;
+  color: #5a4830;
+  border-bottom: 1px solid #f0e8d0;
+}
+
+.h-row:last-child {
+  border-bottom: none;
+}
+
+/* Itens de contato */
+.c-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid #f0e8d0;
+  font-size: 0.88rem;
+  color: #5a4830;
+}
+
+.c-item:last-child {
+  border-bottom: none;
+}
+
+.c-icon {
+  color: #d4a84b;
+  font-size: 1.1rem;
+}
+
+/* Botão WhatsApp */
+.contact-whatsapp-wrapper {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.whatsapp-text {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  color: #c4a878;
+  margin-bottom: 1rem;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: transparent;
+  color: #d4a84b;
+  border: 1px solid #d4a84b;
+  padding: 1rem 2.5rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-whatsapp:hover {
+  background-color: #d4a84b;
+  color: #1a1208;
+  box-shadow: 0 4px 15px rgba(212, 168, 75, 0.2);
+  transform: translateY(-2px);
+}
+
+.whatsapp-icon {
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.btn-whatsapp:hover .whatsapp-icon {
+  transform: scale(1.1);
+}

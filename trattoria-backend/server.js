@@ -1,0 +1,88 @@
+// server.js
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const db = require('./db');
+const { notificarNovaReserva } = require('./services/whatsapp');
+
+const app = express();
+app.use(cors({ origin: process.env.FRONTEND_URL || '*' }));
+app.use(express.json());
+
+// Campos que o formulário do site precisa mandar em toda reserva.
+const CAMPOS_OBRIGATORIOS = ['nome', 'telefone', 'data', 'horario', 'pessoas'];
+
+function validarReserva(body) {
+  for (const campo of CAMPOS_OBRIGATORIOS) {
+    if (!body[campo]) return `Campo obrigatório faltando: ${campo}`;
+  }
+  if (Number(body.pessoas) <= 0) return 'Número de pessoas inválido';
+  return null;
+}
+
+// Procura a menor mesa que comporte o grupo e que esteja livre
+// nessa data/horário (ignora mesas já ocupadas por reservas não recusadas).
+function encontrarMesaDisponivel(data, horario, pessoas) {
+  return db.prepare(`
+    SELECT * FROM mesas
+    WHERE capacidade >= ?
+      AND id NOT IN (
+        SELECT mesa_id FROM reservas
+        WHERE data = ? AND horario = ? AND status != 'RECUSADA'
+      )
+    ORDER BY capacidade ASC
+    LIMIT 1
+  `).get(pessoas, data, horario);
+}
+
+// Cria uma nova reserva: valida, procura mesa, salva como PENDENTE e notifica o restaurante.
+app.post('/reservas', async (req, res) => {
+  const erro = validarReserva(req.body);
+  if (erro) return res.status(400).json({ ok: false, erro });
+
+  const { nome, telefone, data, horario, pessoas, observacoes } = req.body;
+
+  const mesa = encontrarMesaDisponivel(data, horario, Number(pessoas));
+  if (!mesa) {
+    return res.status(409).json({
+      ok: false,
+      erro: 'Não temos mesa disponível para esse dia e horário. Tente outro horário.',
+    });
+  }
+
+  const resultado = db.prepare(`
+    INSERT INTO reservas (nome, telefone, data, horario, pessoas, observacoes, mesa_id)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
+  `).run(nome, telefone, data, horario, pessoas, observacoes || null, mesa.id);
+
+  const reserva = db.prepare('SELECT * FROM reservas WHERE id = ?').get(resultado.lastInsertRowid);
+
+  try {
+    await notificarNovaReserva(reserva, mesa);
+  } catch (erroWhatsapp) {
+    // A reserva já foi salva no banco mesmo se o WhatsApp falhar —
+    // o cliente não deve ficar sem resposta por causa disso.
+    console.error('Falha ao notificar WhatsApp:', erroWhatsapp.message);
+  }
+
+  res.json({ ok: true, reserva });
+});
+
+// Lista todas as reservas (útil pro funcionário ver o que está pendente).
+app.get('/reservas', (req, res) => {
+  const reservas = db.prepare('SELECT * FROM reservas ORDER BY criado_em DESC').all();
+  res.json(reservas);
+});
+
+// Confirmar ou recusar manualmente uma reserva, depois que o funcionário falar com o cliente.
+app.patch('/reservas/:id/status', (req, res) => {
+  const { status } = req.body;
+  if (!['CONFIRMADA', 'RECUSADA'].includes(status)) {
+    return res.status(400).json({ ok: false, erro: 'Status inválido' });
+  }
+  db.prepare('UPDATE reservas SET status = ? WHERE id = ?').run(status, req.params.id);
+  res.json({ ok: true });
+});
+
+const PORTA = process.env.PORT || 3000;
+app.listen(PORTA, () => console.log(`Backend rodando na porta ${PORTA}`));
