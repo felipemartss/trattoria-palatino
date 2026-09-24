@@ -20,21 +20,6 @@ function validarReserva(body) {
   return null;
 }
 
-// Procura a menor mesa que comporte o grupo e que esteja livre
-// nessa data/horário (ignora mesas já ocupadas por reservas não recusadas).
-function encontrarMesaDisponivel(data, horario, pessoas) {
-  return db.prepare(`
-    SELECT * FROM mesas
-    WHERE capacidade >= ?
-      AND id NOT IN (
-        SELECT mesa_id FROM reservas
-        WHERE data = ? AND horario = ? AND status != 'RECUSADA'
-      )
-    ORDER BY capacidade ASC
-    LIMIT 1
-  `).get(pessoas, data, horario);
-}
-
 // Cria uma nova reserva: valida, procura mesa, salva como PENDENTE e notifica o restaurante.
 app.post('/reservas', async (req, res) => {
   const erro = validarReserva(req.body);
@@ -50,7 +35,7 @@ app.post('/reservas', async (req, res) => {
   const reserva = db.prepare('SELECT * FROM reservas WHERE id = ?').get(resultado.lastInsertRowid);
 
   try {
-    await notificarNovaReserva(reserva, mesa);
+    await notificarNovaReserva(reserva);
   } catch (erroWhatsapp) {
     // A reserva já foi salva no banco mesmo se o WhatsApp falhar —
     // o cliente não deve ficar sem resposta por causa disso.
