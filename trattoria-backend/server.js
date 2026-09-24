@@ -42,18 +42,10 @@ app.post('/reservas', async (req, res) => {
 
   const { nome, telefone, data, horario, pessoas, observacoes } = req.body;
 
-  const mesa = encontrarMesaDisponivel(data, horario, Number(pessoas));
-  if (!mesa) {
-    return res.status(409).json({
-      ok: false,
-      erro: 'Não temos mesa disponível para esse dia e horário. Tente outro horário.',
-    });
-  }
-
   const resultado = db.prepare(`
-    INSERT INTO reservas (nome, telefone, data, horario, pessoas, observacoes, mesa_id)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
-  `).run(nome, telefone, data, horario, pessoas, observacoes || null, mesa.id);
+  INSERT INTO reservas (nome, telefone, data, horario, pessoas, observacoes)
+  VALUES (?, ?, ?, ?, ?, ?)
+`).run(nome, telefone, data, horario, pessoas, observacoes || null);
 
   const reserva = db.prepare('SELECT * FROM reservas WHERE id = ?').get(resultado.lastInsertRowid);
 

@@ -12,21 +12,20 @@ function formatarDataBR(iso) {
   return `${dia}/${mes}/${ano}`;
 }
 
-function montarMensagem(reserva, mesa) {
+function montarMensagem(reserva) {
   let msg = `📋 *Nova reserva pendente*\n\n`;
   msg += `*Nome:* ${reserva.nome}\n`;
   msg += `*Telefone:* ${reserva.telefone}\n`;
   msg += `*Data:* ${formatarDataBR(reserva.data)}\n`;
   msg += `*Horário:* ${reserva.horario}\n`;
   msg += `*Pessoas:* ${reserva.pessoas}\n`;
-  msg += `*Mesa:* ${mesa.numero} (capacidade ${mesa.capacidade})\n`;
   if (reserva.observacoes) msg += `*Observações:* ${reserva.observacoes}\n`;
-  msg += `\nReserva #${reserva.id} — confirme com o cliente pelo telefone acima.`;
+  msg += `\nReserva #${reserva.id} — confira a disponibilidade e confirme com o cliente pelo telefone acima.`;
   return msg;
 }
 
-async function notificarNovaReserva(reserva, mesa) {
-  const mensagem = montarMensagem(reserva, mesa);
+async function notificarNovaReserva(reserva) {
+  const mensagem = montarMensagem(reserva);
 
   const resposta = await fetch(`${EVOLUTION_URL}/message/sendText/${INSTANCE_NAME}`, {
     method: 'POST',

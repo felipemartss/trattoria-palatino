@@ -4,8 +4,7 @@
   "description": "Backend do sistema de reservas da Trattoria Palatino",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "seed": "node seed.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "better-sqlite3": "^11.3.0",
