@@ -24,11 +24,3 @@ O servidor sobe em `http://localhost:3000`.
 - `GET /reservas` — lista todas as reservas (mais recentes primeiro).
 - `PATCH /reservas/:id/status` — atualiza o status. Body: `{ "status": "CONFIRMADA" }` ou `{ "status": "RECUSADA" }`.
 
-## Deploy no Railway
-
-1. Suba esta pasta como um novo serviço no mesmo projeto onde já está a Evolution API.
-2. Configure as variáveis de ambiente (as mesmas do `.env.example`) nas Settings do serviço.
-3. **Importante**: o SQLite salva num arquivo (`reservas.db`) dentro do próprio contêiner. Sem um
-   **Volume** anexado ao serviço, esse arquivo some a cada novo deploy. Em Settings → Volumes,
-   crie um volume e monte em `/app` (ou no diretório onde o projeto roda) antes de ir pra produção.
-4. Rode `npm run seed` uma vez (via Railway CLI ou um Run Command manual) pra popular as mesas.
