@@ -98,6 +98,7 @@ A reserva é criada com status `PENDENTE` e aguarda a confirmação do restauran
 ## 👤 Autor
  
 **Felipe Martins**
+
 Estudante de Sistemas de Informação - UFU
 GitHub: [@felipemartss](https://github.com/felipemartss)
  
