@@ -1,4 +1,7 @@
 {
+  "name": "trattoria-palatino",
+  "version": "0.1.0",
+  "description": "Site institucional com sistema de reservas da Trattoria Palatino, restaurante de culinária italiana em Monte Carmelo - MG.",
   "scripts": {
     "start": "npx --yes serve -s . -l $PORT"
   },
