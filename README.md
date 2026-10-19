@@ -6,6 +6,8 @@ além de receber pedidos de reservas de mesa direto pelo site.
 
 Site no ar: 
 
+---
+
 ## Funcionalidades: 
 Front-end: 
 > Layout responsivo, pensado primeiro para celular
@@ -24,6 +26,8 @@ Back-end:
 > API em Node.js + Express com o endpoint POST /reservas
 > Fluxo planejado: toda reserva é salva como PENDENTE e o restaurante recebe uma notificação no WhatsApp com os dados. 
 O próprio restaurante avalia a disponibilidade e confirma direto com o cliente, pelo nome e telefone informados.
+
+---
 
 ## 🛠️ Tecnologias
  
@@ -66,6 +70,8 @@ npm start
 ```
  
 > O `.env` não é versionado. Crie um arquivo `.env` dentro de `trattoria-backend/` com as variáveis necessárias (veja `.env.example`, quando disponível).
+
+---
 
  ## 📡 API
  
